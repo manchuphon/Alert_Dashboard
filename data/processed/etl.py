@@ -34,11 +34,11 @@ class BudgetETL:
         
         # ตั้งค่าไฟล์ input
         self.files = {
-            'actual_cost': '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/actual_cost_data.csv',
-            'summary_cost': '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/summary_cost_data.csv',
-            'progress_payment': '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/progress_payment_data.csv',
-            'projects_master': '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/projects_master.csv',
-            'cost_codes_master': '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/cost_codes_master.csv'
+            'actual_cost': '/Users/aoyrzz/Desktop/Alert_Dash/data/raw/actual_cost_data.csv',
+            'summary_cost': '/Users/aoyrzz/Desktop/Alert_Dash/data/raw/summary_cost_data.csv',
+            'progress_payment': '/Users/aoyrzz/Desktop/Alert_Dash/data/raw/progress_payment_data.csv',
+            'projects_master': '/Users/aoyrzz/Desktop/Alert_Dash/data/raw/projects_master.csv',
+            'cost_codes_master': '/Users/aoyrzz/Desktop/Alert_Dash/data/raw/cost_codes_master.csv'
         }
         
         # เก็บ dataframes

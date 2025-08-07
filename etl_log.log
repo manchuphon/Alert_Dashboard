@@ -1,69 +1,164 @@
-2025-08-07 11:14:38,037 - INFO - ================================================================================
-2025-08-07 11:14:38,037 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
-2025-08-07 11:14:38,037 - INFO - ================================================================================
-2025-08-07 11:14:38,037 - INFO - 🔄 เริ่มโหลดข้อมูล...
-2025-08-07 11:14:38,049 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dashboard3/data/actual_cost_data.csv: 1,500 rows, 30 columns
-2025-08-07 11:14:38,049 - INFO -    Sample columns: ['project_id', 'g_code', 's_code', 'description', 'month']
-2025-08-07 11:14:38,053 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dashboard3/data/summary_cost_data.csv: 1,500 rows, 26 columns
-2025-08-07 11:14:38,054 - INFO -    Sample columns: ['project_id', 'g_code', 's_code', 'description', 'month']
-2025-08-07 11:14:38,055 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dashboard3/data/progress_payment_data.csv: 115 rows, 12 columns
-2025-08-07 11:14:38,055 - INFO -    Sample columns: ['project_no', 'project_name', 'year', 'month', 'date']
-2025-08-07 11:14:38,056 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dashboard3/data/projects_master.csv: 5 rows, 5 columns
-2025-08-07 11:14:38,056 - INFO -    Sample columns: ['project_id', 'project_name', 'contract_value', 'start_date', 'end_date']
-2025-08-07 11:14:38,056 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dashboard3/data/cost_codes_master.csv: 25 rows, 3 columns
-2025-08-07 11:14:38,057 - INFO -    Sample columns: ['g_code', 's_code', 'description']
-2025-08-07 11:14:38,057 - INFO - ✅ โหลดข้อมูลทั้งหมดเสร็จสิ้น: 5 tables
-2025-08-07 11:14:38,057 - INFO - 🔍 ตรวจสอบคุณภาพข้อมูล...
-2025-08-07 11:14:38,062 - INFO - 📊 actual_cost:
-2025-08-07 11:14:38,062 - INFO -    - Rows: 1,500
-2025-08-07 11:14:38,062 - INFO -    - Missing values: 420
-2025-08-07 11:14:38,062 - INFO -    - Duplicates: 0
-2025-08-07 11:14:38,065 - INFO - 📊 summary_cost:
-2025-08-07 11:14:38,065 - INFO -    - Rows: 1,500
-2025-08-07 11:14:38,065 - INFO -    - Missing values: 420
-2025-08-07 11:14:38,065 - INFO -    - Duplicates: 0
-2025-08-07 11:14:38,066 - INFO - 📊 progress_payment:
-2025-08-07 11:14:38,066 - INFO -    - Rows: 115
-2025-08-07 11:14:38,066 - INFO -    - Missing values: 0
-2025-08-07 11:14:38,066 - INFO -    - Duplicates: 0
-2025-08-07 11:14:38,066 - INFO - 📊 projects_master:
-2025-08-07 11:14:38,066 - INFO -    - Rows: 5
-2025-08-07 11:14:38,066 - INFO -    - Missing values: 0
-2025-08-07 11:14:38,066 - INFO -    - Duplicates: 0
-2025-08-07 11:14:38,066 - INFO - 📊 cost_codes_master:
-2025-08-07 11:14:38,066 - INFO -    - Rows: 25
-2025-08-07 11:14:38,067 - INFO -    - Missing values: 7
-2025-08-07 11:14:38,067 - INFO -    - Duplicates: 0
-2025-08-07 11:14:38,067 - INFO - 📋 Validation report saved: data/processed//quality_reports/data_validation_report.json
-2025-08-07 11:14:38,067 - INFO - 🧹 ทำความสะอาดข้อมูล...
-2025-08-07 11:14:38,075 - INFO - 🧹 actual_cost: ลบ 0 rows, เหลือ 1,500 rows
-2025-08-07 11:14:38,082 - INFO - 🧹 summary_cost: ลบ 0 rows, เหลือ 1,500 rows
-2025-08-07 11:14:38,083 - INFO - 🧹 progress_payment: ลบ 0 rows, เหลือ 115 rows
-2025-08-07 11:14:38,083 - INFO - 🧹 projects_master: ลบ 0 rows, เหลือ 5 rows
-2025-08-07 11:14:38,083 - INFO - 🧹 cost_codes_master: ลบ 0 rows, เหลือ 25 rows
-2025-08-07 11:14:38,083 - INFO - 🔗 สร้าง Master Schema...
-2025-08-07 11:14:38,084 - INFO - 📊 เริ่มจาก Actual Cost: 1,500 rows
-2025-08-07 11:14:38,087 - INFO - 📊 หลัง join Summary Cost: 1,500 rows
-2025-08-07 11:14:38,090 - INFO - 📊 หลัง join Progress Payment: 1,500 rows
-2025-08-07 11:14:38,092 - INFO - 📊 หลัง join Projects Master: 1,500 rows
-2025-08-07 11:14:38,093 - INFO - 📊 หลัง join Cost Codes: 1,500 rows
-2025-08-07 11:14:38,093 - INFO - ✅ Master Schema สร้างเสร็จ: 1,500 rows, 45 columns
-2025-08-07 11:14:38,093 - INFO - ⚙️ สร้าง Derived Features...
-2025-08-07 11:14:38,122 - INFO - ✅ เพิ่ม Derived Features: 19 features
-2025-08-07 11:14:38,122 - INFO - 📊 Total columns: 65
-2025-08-07 11:14:38,122 - INFO - 🚨 สร้าง Alert Flags...
-2025-08-07 11:14:38,137 - INFO - 🚨 Alert Summary: {'Green': 227, 'Red': 1017, 'Yellow': 256}
-2025-08-07 11:14:38,140 - INFO - ✅ สร้าง Alert Flags เสร็จ: 8 alert types
-2025-08-07 11:14:38,140 - INFO - 💾 Export ข้อมูล...
-2025-08-07 11:14:38,190 - INFO - ✅ Master Data: data/processed//master_data.csv (1,500 rows)
-2025-08-07 11:14:38,220 - INFO - ✅ ML Features: data/processed//ml_features.csv (1,500 rows, 36 features)
-2025-08-07 11:14:38,223 - INFO - ✅ Project Summary: data/processed//project_summary.csv
-2025-08-07 11:14:38,224 - INFO - ✅ Cost Code Summary: data/processed//cost_code_summary.csv
-2025-08-07 11:14:38,226 - INFO - ✅ Data Dictionary: data/processed//data_dictionary.json
-2025-08-07 11:14:38,226 - INFO - ================================================================================
-2025-08-07 11:14:38,226 - INFO - ✅ ETL Pipeline เสร็จสิ้น!
-2025-08-07 11:14:38,226 - INFO - ⏱️ ใช้เวลา: 0:00:00.188999
-2025-08-07 11:14:38,226 - INFO - 📊 ประมวลผล: 1,500 records
-2025-08-07 11:14:38,226 - INFO - 📁 สร้างไฟล์: 4 files
-2025-08-07 11:14:38,226 - INFO - 🚨 Alert Summary: {'Green': 227, 'Red': 1017, 'Yellow': 256}
-2025-08-07 11:14:38,226 - INFO - ================================================================================
+2025-08-07 14:05:59,401 - INFO - ================================================================================
+2025-08-07 14:05:59,401 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
+2025-08-07 14:05:59,401 - INFO - ================================================================================
+2025-08-07 14:05:59,401 - INFO - 🔄 เริ่มโหลดข้อมูล...
+2025-08-07 14:05:59,402 - ERROR - ❌ ไม่พบไฟล์: data/raw/actual_cost_data.csv
+2025-08-07 14:05:59,402 - ERROR - ❌ ETL Pipeline ล้มเหลว: [Errno 2] No such file or directory: 'data/raw/actual_cost_data.csv'
+2025-08-07 14:07:29,011 - INFO - ================================================================================
+2025-08-07 14:07:29,012 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
+2025-08-07 14:07:29,012 - INFO - ================================================================================
+2025-08-07 14:07:29,012 - INFO - 🔄 เริ่มโหลดข้อมูล...
+2025-08-07 14:07:29,012 - ERROR - ❌ ไม่พบไฟล์: data/raw/actual_cost_data.csv
+2025-08-07 14:07:29,012 - ERROR - ❌ ETL Pipeline ล้มเหลว: [Errno 2] No such file or directory: 'data/raw/actual_cost_data.csv'
+2025-08-07 14:14:57,392 - INFO - ================================================================================
+2025-08-07 14:14:57,392 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
+2025-08-07 14:14:57,392 - INFO - ================================================================================
+2025-08-07 14:14:57,392 - INFO - 🔄 เริ่มโหลดข้อมูล...
+2025-08-07 14:14:57,402 - INFO - ✅ โหลด actual_cost_data.csv: 1,500 rows, 30 columns
+2025-08-07 14:14:57,402 - INFO -    Sample columns: ['project_id', 'g_code', 's_code', 'description', 'month']
+2025-08-07 14:14:57,408 - INFO - ✅ โหลด summary_cost_data.csv: 1,500 rows, 26 columns
+2025-08-07 14:14:57,408 - INFO -    Sample columns: ['project_id', 'g_code', 's_code', 'description', 'month']
+2025-08-07 14:14:57,409 - INFO - ✅ โหลด progress_payment_data.csv: 115 rows, 12 columns
+2025-08-07 14:14:57,409 - INFO -    Sample columns: ['project_no', 'project_name', 'year', 'month', 'date']
+2025-08-07 14:14:57,410 - INFO - ✅ โหลด projects_master.csv: 5 rows, 5 columns
+2025-08-07 14:14:57,410 - INFO -    Sample columns: ['project_id', 'project_name', 'contract_value', 'start_date', 'end_date']
+2025-08-07 14:14:57,411 - INFO - ✅ โหลด cost_codes_master.csv: 25 rows, 3 columns
+2025-08-07 14:14:57,411 - INFO -    Sample columns: ['g_code', 's_code', 'description']
+2025-08-07 14:14:57,411 - INFO - ✅ โหลดข้อมูลทั้งหมดเสร็จสิ้น: 5 tables
+2025-08-07 14:14:57,411 - INFO - 🔍 ตรวจสอบคุณภาพข้อมูล...
+2025-08-07 14:14:57,416 - INFO - 📊 actual_cost:
+2025-08-07 14:14:57,416 - INFO -    - Rows: 1,500
+2025-08-07 14:14:57,416 - INFO -    - Missing values: 420
+2025-08-07 14:14:57,416 - INFO -    - Duplicates: 0
+2025-08-07 14:14:57,419 - INFO - 📊 summary_cost:
+2025-08-07 14:14:57,419 - INFO -    - Rows: 1,500
+2025-08-07 14:14:57,419 - INFO -    - Missing values: 420
+2025-08-07 14:14:57,419 - INFO -    - Duplicates: 0
+2025-08-07 14:14:57,420 - INFO - 📊 progress_payment:
+2025-08-07 14:14:57,420 - INFO -    - Rows: 115
+2025-08-07 14:14:57,420 - INFO -    - Missing values: 0
+2025-08-07 14:14:57,420 - INFO -    - Duplicates: 0
+2025-08-07 14:14:57,420 - INFO - 📊 projects_master:
+2025-08-07 14:14:57,420 - INFO -    - Rows: 5
+2025-08-07 14:14:57,420 - INFO -    - Missing values: 0
+2025-08-07 14:14:57,420 - INFO -    - Duplicates: 0
+2025-08-07 14:14:57,421 - INFO - 📊 cost_codes_master:
+2025-08-07 14:14:57,421 - INFO -    - Rows: 25
+2025-08-07 14:14:57,421 - INFO -    - Missing values: 7
+2025-08-07 14:14:57,421 - INFO -    - Duplicates: 0
+2025-08-07 14:14:57,421 - INFO - 📋 Validation report saved: data/processed//quality_reports/data_validation_report.json
+2025-08-07 14:14:57,421 - INFO - 🧹 ทำความสะอาดข้อมูล...
+2025-08-07 14:14:57,431 - INFO - 🧹 actual_cost: ลบ 0 rows, เหลือ 1,500 rows
+2025-08-07 14:14:57,437 - INFO - 🧹 summary_cost: ลบ 0 rows, เหลือ 1,500 rows
+2025-08-07 14:14:57,439 - INFO - 🧹 progress_payment: ลบ 0 rows, เหลือ 115 rows
+2025-08-07 14:14:57,439 - INFO - 🧹 projects_master: ลบ 0 rows, เหลือ 5 rows
+2025-08-07 14:14:57,439 - INFO - 🧹 cost_codes_master: ลบ 0 rows, เหลือ 25 rows
+2025-08-07 14:14:57,439 - INFO - 🔗 สร้าง Master Schema...
+2025-08-07 14:14:57,439 - INFO - 📊 เริ่มจาก Actual Cost: 1,500 rows
+2025-08-07 14:14:57,442 - INFO - 📊 หลัง join Summary Cost: 1,500 rows
+2025-08-07 14:14:57,442 - INFO - 💰 ประมวลผล Progress Payment...
+2025-08-07 14:14:57,447 - INFO - 💰 Progress Payment processed: 60 records
+2025-08-07 14:14:57,448 - INFO - 📊 หลัง join Progress Payment: 1,500 rows
+2025-08-07 14:14:57,449 - INFO - 📊 หลัง join Projects Master: 1,500 rows
+2025-08-07 14:14:57,451 - INFO - 📊 หลัง join Cost Codes: 1,500 rows
+2025-08-07 14:14:57,451 - INFO - ✅ Master Schema สร้างเสร็จ: 1,500 rows, 47 columns
+2025-08-07 14:14:57,451 - INFO - ⚙️ สร้าง Derived Features...
+2025-08-07 14:14:57,478 - INFO - ✅ เพิ่ม Derived Features: 19 features
+2025-08-07 14:14:57,478 - INFO - 📊 Total columns: 67
+2025-08-07 14:14:57,478 - INFO - 🚨 สร้าง Alert Flags...
+2025-08-07 14:14:57,503 - INFO - 🚨 Alert Summary: {'Green': 227, 'Red': 1017, 'Yellow': 256}
+2025-08-07 14:14:57,511 - INFO - ✅ สร้าง Alert Flags เสร็จ: 8 alert types
+2025-08-07 14:14:57,511 - INFO - 💾 Export ข้อมูล...
+2025-08-07 14:14:57,568 - INFO - ✅ Master Data: data/processed//master_data.csv (1,500 rows)
+2025-08-07 14:14:57,593 - INFO - ✅ ML Features: data/processed//ml_features.csv (1,500 rows, 36 features)
+2025-08-07 14:14:57,597 - INFO - ✅ Project Summary: data/processed//project_summary.csv
+2025-08-07 14:14:57,599 - INFO - ✅ Cost Code Summary: data/processed//cost_code_summary.csv
+2025-08-07 14:14:57,600 - INFO - ✅ Data Dictionary: data/processed//data_dictionary.json
+2025-08-07 14:14:57,601 - INFO - ================================================================================
+2025-08-07 14:14:57,601 - INFO - ✅ ETL Pipeline เสร็จสิ้น!
+2025-08-07 14:14:57,601 - INFO - ⏱️ ใช้เวลา: 0:00:00.208516
+2025-08-07 14:14:57,601 - INFO - 📊 ประมวลผล: 1,500 records
+2025-08-07 14:14:57,601 - INFO - 📁 สร้างไฟล์: 4 files
+2025-08-07 14:14:57,601 - INFO - 🚨 Alert Summary: {'Green': 227, 'Red': 1017, 'Yellow': 256}
+2025-08-07 14:14:57,601 - INFO - ================================================================================
+2025-08-07 15:21:44,315 - INFO - ================================================================================
+2025-08-07 15:21:44,315 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
+2025-08-07 15:21:44,315 - INFO - ================================================================================
+2025-08-07 15:21:44,315 - INFO - 🔄 เริ่มโหลดข้อมูล...
+2025-08-07 15:21:44,316 - ERROR - ❌ ไม่พบไฟล์: /Users/aoyrzz/Desktop/Alert_Dashboard3/data/actual_cost_data.csv
+2025-08-07 15:21:44,316 - ERROR - ❌ ETL Pipeline ล้มเหลว: [Errno 2] No such file or directory: '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/actual_cost_data.csv'
+2025-08-07 15:22:15,365 - INFO - ================================================================================
+2025-08-07 15:22:15,365 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
+2025-08-07 15:22:15,365 - INFO - ================================================================================
+2025-08-07 15:22:15,365 - INFO - 🔄 เริ่มโหลดข้อมูล...
+2025-08-07 15:22:15,366 - ERROR - ❌ ไม่พบไฟล์: /Users/aoyrzz/Desktop/Alert_Dashboard3/data/raw/actual_cost_data.csv
+2025-08-07 15:22:15,366 - ERROR - ❌ ETL Pipeline ล้มเหลว: [Errno 2] No such file or directory: '/Users/aoyrzz/Desktop/Alert_Dashboard3/data/raw/actual_cost_data.csv'
+2025-08-07 15:22:49,594 - INFO - ================================================================================
+2025-08-07 15:22:49,595 - INFO - 🚀 เริ่ม ETL Pipeline สำหรับ AI Budget Alert Dashboard
+2025-08-07 15:22:49,595 - INFO - ================================================================================
+2025-08-07 15:22:49,595 - INFO - 🔄 เริ่มโหลดข้อมูล...
+2025-08-07 15:22:49,606 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dash/data/raw/actual_cost_data.csv: 1,500 rows, 30 columns
+2025-08-07 15:22:49,606 - INFO -    Sample columns: ['project_id', 'g_code', 's_code', 'description', 'month']
+2025-08-07 15:22:49,611 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dash/data/raw/summary_cost_data.csv: 1,500 rows, 26 columns
+2025-08-07 15:22:49,611 - INFO -    Sample columns: ['project_id', 'g_code', 's_code', 'description', 'month']
+2025-08-07 15:22:49,613 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dash/data/raw/progress_payment_data.csv: 115 rows, 12 columns
+2025-08-07 15:22:49,613 - INFO -    Sample columns: ['project_no', 'project_name', 'year', 'month', 'date']
+2025-08-07 15:22:49,613 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dash/data/raw/projects_master.csv: 5 rows, 5 columns
+2025-08-07 15:22:49,613 - INFO -    Sample columns: ['project_id', 'project_name', 'contract_value', 'start_date', 'end_date']
+2025-08-07 15:22:49,614 - INFO - ✅ โหลด /Users/aoyrzz/Desktop/Alert_Dash/data/raw/cost_codes_master.csv: 25 rows, 3 columns
+2025-08-07 15:22:49,614 - INFO -    Sample columns: ['g_code', 's_code', 'description']
+2025-08-07 15:22:49,614 - INFO - ✅ โหลดข้อมูลทั้งหมดเสร็จสิ้น: 5 tables
+2025-08-07 15:22:49,614 - INFO - 🔍 ตรวจสอบคุณภาพข้อมูล...
+2025-08-07 15:22:49,619 - INFO - 📊 actual_cost:
+2025-08-07 15:22:49,619 - INFO -    - Rows: 1,500
+2025-08-07 15:22:49,619 - INFO -    - Missing values: 420
+2025-08-07 15:22:49,619 - INFO -    - Duplicates: 0
+2025-08-07 15:22:49,622 - INFO - 📊 summary_cost:
+2025-08-07 15:22:49,622 - INFO -    - Rows: 1,500
+2025-08-07 15:22:49,622 - INFO -    - Missing values: 420
+2025-08-07 15:22:49,622 - INFO -    - Duplicates: 0
+2025-08-07 15:22:49,623 - INFO - 📊 progress_payment:
+2025-08-07 15:22:49,623 - INFO -    - Rows: 115
+2025-08-07 15:22:49,623 - INFO -    - Missing values: 0
+2025-08-07 15:22:49,623 - INFO -    - Duplicates: 0
+2025-08-07 15:22:49,623 - INFO - 📊 projects_master:
+2025-08-07 15:22:49,623 - INFO -    - Rows: 5
+2025-08-07 15:22:49,623 - INFO -    - Missing values: 0
+2025-08-07 15:22:49,623 - INFO -    - Duplicates: 0
+2025-08-07 15:22:49,624 - INFO - 📊 cost_codes_master:
+2025-08-07 15:22:49,624 - INFO -    - Rows: 25
+2025-08-07 15:22:49,624 - INFO -    - Missing values: 7
+2025-08-07 15:22:49,624 - INFO -    - Duplicates: 0
+2025-08-07 15:22:49,625 - INFO - 📋 Validation report saved: data/processed//quality_reports/data_validation_report.json
+2025-08-07 15:22:49,625 - INFO - 🧹 ทำความสะอาดข้อมูล...
+2025-08-07 15:22:49,634 - INFO - 🧹 actual_cost: ลบ 0 rows, เหลือ 1,500 rows
+2025-08-07 15:22:49,640 - INFO - 🧹 summary_cost: ลบ 0 rows, เหลือ 1,500 rows
+2025-08-07 15:22:49,641 - INFO - 🧹 progress_payment: ลบ 0 rows, เหลือ 115 rows
+2025-08-07 15:22:49,642 - INFO - 🧹 projects_master: ลบ 0 rows, เหลือ 5 rows
+2025-08-07 15:22:49,642 - INFO - 🧹 cost_codes_master: ลบ 0 rows, เหลือ 25 rows
+2025-08-07 15:22:49,642 - INFO - 🔗 สร้าง Master Schema...
+2025-08-07 15:22:49,642 - INFO - 📊 เริ่มจาก Actual Cost: 1,500 rows
+2025-08-07 15:22:49,645 - INFO - 📊 หลัง join Summary Cost: 1,500 rows
+2025-08-07 15:22:49,649 - INFO - 📊 หลัง join Progress Payment: 1,500 rows
+2025-08-07 15:22:49,650 - INFO - 📊 หลัง join Projects Master: 1,500 rows
+2025-08-07 15:22:49,651 - INFO - 📊 หลัง join Cost Codes: 1,500 rows
+2025-08-07 15:22:49,651 - INFO - ✅ Master Schema สร้างเสร็จ: 1,500 rows, 45 columns
+2025-08-07 15:22:49,652 - INFO - ⚙️ สร้าง Derived Features...
+2025-08-07 15:22:49,679 - INFO - ✅ เพิ่ม Derived Features: 19 features
+2025-08-07 15:22:49,679 - INFO - 📊 Total columns: 65
+2025-08-07 15:22:49,679 - INFO - 🚨 สร้าง Alert Flags...
+2025-08-07 15:22:49,694 - INFO - 🚨 Alert Summary: {'Green': 227, 'Red': 1017, 'Yellow': 256}
+2025-08-07 15:22:49,698 - INFO - ✅ สร้าง Alert Flags เสร็จ: 8 alert types
+2025-08-07 15:22:49,698 - INFO - 💾 Export ข้อมูล...
+2025-08-07 15:22:49,747 - INFO - ✅ Master Data: data/processed//master_data.csv (1,500 rows)
+2025-08-07 15:22:49,774 - INFO - ✅ ML Features: data/processed//ml_features.csv (1,500 rows, 36 features)
+2025-08-07 15:22:49,777 - INFO - ✅ Project Summary: data/processed//project_summary.csv
+2025-08-07 15:22:49,779 - INFO - ✅ Cost Code Summary: data/processed//cost_code_summary.csv
+2025-08-07 15:22:49,781 - INFO - ✅ Data Dictionary: data/processed//data_dictionary.json
+2025-08-07 15:22:49,781 - INFO - ================================================================================
+2025-08-07 15:22:49,781 - INFO - ✅ ETL Pipeline เสร็จสิ้น!
+2025-08-07 15:22:49,781 - INFO - ⏱️ ใช้เวลา: 0:00:00.186564
+2025-08-07 15:22:49,781 - INFO - 📊 ประมวลผล: 1,500 records
+2025-08-07 15:22:49,781 - INFO - 📁 สร้างไฟล์: 4 files
+2025-08-07 15:22:49,781 - INFO - 🚨 Alert Summary: {'Green': 227, 'Red': 1017, 'Yellow': 256}
+2025-08-07 15:22:49,781 - INFO - ================================================================================
