@@ -1,0 +1,134 @@
+{
+  "actual_cost": {
+    "total_rows": 1500,
+    "total_columns": 30,
+    "missing_values": "420",
+    "duplicate_rows": "0",
+    "data_types": {
+      "project_id": "object",
+      "g_code": "object",
+      "s_code": "object",
+      "description": "object",
+      "month": "int64",
+      "year": "int64",
+      "boq": "float64",
+      "bg_overhead": "float64",
+      "bg_material": "float64",
+      "bg_labour": "float64",
+      "bg_subc": "float64",
+      "total_budget": "float64",
+      "ac_overhead": "float64",
+      "ac_material": "float64",
+      "ac_labour": "float64",
+      "ac_subc": "float64",
+      "total_actual": "float64",
+      "bg_balance": "float64",
+      "pg_submit": "float64",
+      "pg_certificate": "float64",
+      "pg_submit_bal": "float64",
+      "progress_percentage": "float64",
+      "cpi": "float64",
+      "spi": "float64",
+      "budget_utilization_pct": "float64",
+      "progress_cost_ratio": "float64",
+      "quarter": "int64",
+      "is_year_end": "int64",
+      "risk_overrun": "int64",
+      "risk_progress_lag": "int64"
+    },
+    "key_validations": {
+      "missing_project_id": "0",
+      "missing_g_code": "0",
+      "negative_budget": "0"
+    }
+  },
+  "summary_cost": {
+    "total_rows": 1500,
+    "total_columns": 26,
+    "missing_values": "420",
+    "duplicate_rows": "0",
+    "data_types": {
+      "project_id": "object",
+      "g_code": "object",
+      "s_code": "object",
+      "description": "object",
+      "month": "int64",
+      "year": "int64",
+      "boq": "float64",
+      "budget": "int64",
+      "cost_saving": "float64",
+      "purchase_cost": "float64",
+      "pr_pending": "float64",
+      "budget_balance_pu": "float64",
+      "actual_cost_ac": "float64",
+      "unbook": "float64",
+      "actual_cost_all": "float64",
+      "budget_balance_ac": "float64",
+      "purchase_balance": "float64",
+      "forecast": "float64",
+      "to_be_order": "float64",
+      "variance_budget": "float64",
+      "finance_cost": "float64",
+      "finance_balance": "float64",
+      "cost_variance_pct": "float64",
+      "purchase_efficiency": "float64",
+      "risk_high_variance": "int64",
+      "risk_forecast_overrun": "int64"
+    },
+    "key_validations": {
+      "missing_project_id": "0",
+      "missing_g_code": "0",
+      "negative_budget": "0"
+    }
+  },
+  "progress_payment": {
+    "total_rows": 115,
+    "total_columns": 12,
+    "missing_values": "0",
+    "duplicate_rows": "0",
+    "data_types": {
+      "project_no": "object",
+      "project_name": "object",
+      "year": "int64",
+      "month": "int64",
+      "date": "object",
+      "period": "object",
+      "progress_submit": "float64",
+      "certificate": "float64",
+      "submit_balance": "float64",
+      "remark": "object",
+      "ref_no": "object",
+      "no": "int64"
+    },
+    "key_validations": {
+      "missing_project_no": "0",
+      "negative_amounts": "0"
+    }
+  },
+  "projects_master": {
+    "total_rows": 5,
+    "total_columns": 5,
+    "missing_values": "0",
+    "duplicate_rows": "0",
+    "data_types": {
+      "project_id": "object",
+      "project_name": "object",
+      "contract_value": "int64",
+      "start_date": "object",
+      "end_date": "object"
+    },
+    "key_validations": {}
+  },
+  "cost_codes_master": {
+    "total_rows": 25,
+    "total_columns": 3,
+    "missing_values": "7",
+    "duplicate_rows": "0",
+    "data_types": {
+      "g_code": "object",
+      "s_code": "object",
+      "description": "object"
+    },
+    "key_validations": {}
+  }
+}

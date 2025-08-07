@@ -1,0 +1,18 @@
+{
+  "master_data_columns": 77,
+  "total_records": 1500,
+  "date_range": "2024-01-01 00:00:00 to 2024-12-01 00:00:00",
+  "projects_count": 5,
+  "cost_codes_count": 25,
+  "alert_distribution": {
+    "Red": 1017,
+    "Yellow": 256,
+    "Green": 227
+  },
+  "files_created": [
+    "data/processed//master_data.csv",
+    "data/processed//ml_features.csv",
+    "data/processed//project_summary.csv",
+    "data/processed//cost_code_summary.csv"
+  ]
+}
